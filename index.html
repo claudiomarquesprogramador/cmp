@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100&display=swap');
+
+        * {
+            font-family: 'Roboto Serif', serif;
+            background-color: black;
+            color: white;
+            max-width: 1024px;
+            width: 100vw;
+            height: 100vh;
+            padding: 0px;
+            border: 0px;
+            margin: auto;
+        }
+
+        h1 {
+            display: flex;
+            width: 300px;
+            height: auto;
+            justify-content: center;
+            margin-top: 3px;
+        }
+
+        #corpo {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .produto1 {
+            width: 150px;
+            height: 219px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid white;
+            border-radius: 3px;
+            margin: 4px;
+        }
+
+        .produto1 p {
+            width: auto;
+            height: auto;
+            display: flex;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .negrito {
+            font-weight: bold;
+        }
+
+        .produto2 {
+            width: auto;
+            height: 69%;
+            display: flex;
+        }
+
+        .produto2 img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .foto {
+            width: auto;
+            height: auto;
+            display: flex;
+            background-color: gold;
+        }
+        .produto3 {
+            width: auto;
+            height: auto;
+            display: flex;
+        }
+        .produto3 input {
+            width: auto;
+            height: auto;
+            border: 1px solid white;
+        }
+
+        .textnumero {
+            max-width: 25%;
+        }
+
+        .adicionar {
+            min-width: 60%;
+            background-color: white;
+            color: black;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        #celular {
+            background-image: url(imagens/telacelular.png);
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        #celular p {
+            background-color: transparent;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Projeto JavaScript</h1>
+    <div id="corpo">
+        <div class="produto1">
+            <div class="produto2"><img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto"></div>
+            <p class="negrito">Coxão de Frango</p>
+            <p>Muito frango desfiado.</p>
+            <p><br></p>
+            <p>R$ 9,00.</p>
+            <div class="produto3">
+                <input type="number" name="text1" id="text1" placeholder="0" class="textnumero" min="1" max="20">
+                <input type="submit" value="Adicionar" class="adicionar">
+            </div>
+        </div>
+        <div class="produto1">
+            <div class="produto2"><img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto"></div>
+            <p class="negrito">Frango com Requeijão.</p>
+            <p>Frango desfiado com requeijão cremoso.</p>
+            <p>R$ 9,00.</p>
+            <div class="produto3">
+                <input type="number" name="text2" id="text2" placeholder="0" class="textnumero" min="1" max="20">
+                <input type="submit" value="Adicionar" class="adicionar">
+            </div>
+        </div>
+        <div class="produto1">
+            <div class="produto2"><img src="imagens/coxinhasalsichao.png" alt="Coxinha de salsicha" class="foto"></div>
+            <p class="negrito">Salsichão</p>
+            <p>Salsicha recheada com queijo coalho.</p>
+            <p>R$ 9,00.</p>
+            <div class="produto3">
+                <input type="number" name="text3" id="text3" placeholder="0" class="textnumero" min="1" max="20">
+                <input type="submit" value="Adicionar" class="adicionar">
+            </div>
+        </div>
+        <div class="produto1">
+            <div class="produto2"><img src="imagens/coxinhapizza.png" alt="Coxinha de pizza" class="foto"></div>
+            <p class="negrito">Coxão de Pizza</p>
+            <p>Queijo musarela, presunto, azeitona orégano e molho.</p>
+            <p>R$ 9,00.</p>
+            <div class="produto3">
+                <input type="number" name="text4" id="text4" placeholder="0" class="textnumero" min="1" max="20">
+                <input type="submit" value="Adicionar" class="adicionar">
+            </div>
+        </div>
+        <div class="produto1">
+            <div class="produto2"><img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto"></div>
+            <p class="negrito">Coxão Rústico</p>
+            <p>Frango, queijo coalho, milho, coentro e cebolinha.</p>
+            <p>R$ 9,00.</p>
+            <div class="produto3">
+                <input type="number" name="text5" id="text5" placeholder="0" class="textnumero" min="1" max="20">
+                <input type="submit" value="Adicionar" class="adicionar">
+            </div>
+        </div>
+        <div class="produto1">
+            <div id="celular"><p></p></div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
