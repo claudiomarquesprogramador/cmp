@@ -125,7 +125,7 @@
             <p>R$ 9,00.</p>
             <div class="produto3">
                 <input type="number" name="text1" id="text1" placeholder="0" class="textnumero" min="1" max="20">
-                <input type="submit" value="Adicionar" class="adicionar">
+                <input type="submit" value="Adicionar" class="adicionar" id="adicionar1" onclick="prod1()">
             </div>
         </div>
         <div class="produto1">
@@ -169,11 +169,20 @@
             </div>
         </div>
         <div class="produto1">
-            <div id="celular"><p></p></div>
+            <div id="celular"></div>
         </div>
     </div>
     <script>
-        
+        let numero1=document.getElementById(text1)
+        let celular=document.querySelector('div#celular')
+        function prod1() {
+            if (numero1==null || numero1==0) {
+                alert('Coloque a quantidade e depois adicione.')
+            } else {
+                celular.innerHTML = 'numero1'
+                document.write(celular.innerHTML)
+            }
+        }
     </script>
 </body>
 </html>
