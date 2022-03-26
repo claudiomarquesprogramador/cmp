@@ -172,8 +172,15 @@
     <script>
         let numero1=document.getElementById("text1")
         let celular=document.querySelector('div#celular')
-        function prod1(){
+        /*function prod1(){
             celular.innerHTML="Coxão de frango "+text1.value;
+        }*/
+        function prod1(){
+            if (text1.value>0) {
+                celular.innerHTML="Coxão de Frango "+text1.value+(" de R$ 9,00");
+            } else {
+                alert("Valor em branco!")
+            }
         }
         
     </script>
