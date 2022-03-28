@@ -51,17 +51,9 @@
             margin: 4px;
         }
 
-        .produto1 p {
-            width: auto;
-            height: auto;
-            display: flex;
-            font-size: 10px;
-            text-align: center;
-        }
-
         .produto2 {
             width: auto;
-            height: 65%;
+            height: 60%;
             display: flex;
         }
 
@@ -80,11 +72,55 @@
 
         .produto3 {
             width: 100%;
+            height: 31%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produto3 p {
+            width: auto;
             height: auto;
+            display: flex;
+            text-align: center;
+        }
+
+        @media(min-width: 320px) {
+            p {
+                font-size: 10px;
+            }
+        }
+
+        @media(min-width: 375px) {
+            p {
+                font-size: 12px;
+            }
+        }
+
+        @media(min-width: 425px) {
+            p {
+                font-size: 13px;
+            }
+        }
+
+        @media(min-width: 768px) {
+            p {
+                font-size: 21px;
+            }
+        }
+
+        @media(min-width: 1024px) {
+            p {
+                font-size: 23px;
+            }
+        }
+
+        .produto4 {
+            width: 100%;
+            height: 9%;
             display: flex;
         }
 
-        .produto3 input {
+        .produto4 input {
             width: 35%;
             height: auto;
             background-color: white;
@@ -123,55 +159,65 @@
             <div class="produto2">
                 <img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto">
             </div>
-            <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.</p>
-            <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="button" value="+">
+                <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.</p>
+                <p>R$ 9,00.</p>
+            </div>
+            <div class="produto4">
                 <input type="button" value="-">
+                <input type="button" value="+">
             </div>
         </div>
         <div class="produto1">
             <div class="produto2">
                 <img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto">
             </div>
-            <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.</p>
-            <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="button" value="+">
+                <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.</p>
+                <p>R$ 9,00.</p>
+            </div>
+            <div class="produto4">
                 <input type="button" value="-">
+                <input type="button" value="+">
             </div>
         </div>
         <div class="produto1">
             <div class="produto2">
                 <img src="imagens/coxinhasalsichao.png" alt="Coxinha de salsicha" class="foto">
             </div>
-            <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.</p>
-            <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="button" value="+">
+                <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.</p>
+                <p>R$ 9,00.</p>
+            </div>
+            <div class="produto4">
                 <input type="button" value="-">
+                <input type="button" value="+">
             </div>
         </div>
         <div class="produto1">
             <div class="produto2">
                 <img src="imagens/coxinhapizza.png" alt="Coxinha de pizza" class="foto">
             </div>
-            <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.</p>
-            <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="button" value="+">
+                <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.</p>
+                <p>R$ 9,00.</p>
+            </div>
+            <div class="produto4">
                 <input type="button" value="-">
+                <input type="button" value="+">
             </div>
         </div>
         <div class="produto1">
             <div class="produto2">
                 <img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto">
             </div>
-            <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.</p>
-            <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="button" value="+">
+                <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.</p>
+                <p>R$ 9,00.</p>
+            </div>
+            <div class="produto4">
                 <input type="button" value="-">
+                <input type="button" value="+">
             </div>
         </div>
         <div class="produto1">
