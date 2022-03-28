@@ -29,6 +29,7 @@
         }
 
         #corpo {
+            max-width: 1024px;
             width: auto;
             height: auto;
             display: flex;
@@ -38,8 +39,11 @@
         }
 
         .produto1 {
-            width: 150px;
-            height: 219px;
+            max-width: 300px;
+            width: 45%;
+            min-height: 200px;
+            max-height: calc(50vw);
+            height: auto;
             display: flex;
             flex-direction: column;
             border: 1px solid white;
@@ -55,13 +59,9 @@
             text-align: center;
         }
 
-        .negrito {
-            font-weight: bold;
-        }
-
         .produto2 {
             width: auto;
-            height: 69%;
+            height: 65%;
             display: flex;
         }
 
@@ -75,17 +75,22 @@
             width: auto;
             height: auto;
             display: flex;
-            background-color: gold;
+            background-color: rgb(255, 215, 0);
         }
+
         .produto3 {
-            width: auto;
+            width: 100%;
             height: auto;
             display: flex;
         }
+
         .produto3 input {
-            width: auto;
+            width: 35%;
             height: auto;
-            border: 1px solid white;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            border-radius: 8px;
         }
 
         .textnumero {
@@ -115,47 +120,64 @@
     <h1>Projeto JavaScript</h1>
     <div id="corpo">
         <div class="produto1">
-            <div class="produto2"><img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto"></div>
-            <p class="negrito">Coxão de Frango</p>
-            <p>Muito frango desfiado.</p>
-            <p><br></p>
+            <div class="produto2">
+                <img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto">
+            </div>
+            <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.</p>
             <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="number" name="text1" id="text1" placeholder="0" class="textnumero" min="0" max="20">
-                <input type="submit" value="Adicionar" class="adicionar" id="adicionar1" onclick="prod1()">
+                <input type="button" value="+">
+                <input type="button" value="-">
             </div>
         </div>
         <div class="produto1">
-            <div class="produto2"><img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto"></div>
-            <p class="negrito">Frango com Requeijão.</p>
-            <p>Frango desfiado com requeijão cremoso.</p>
+            <div class="produto2">
+                <img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto">
+            </div>
+            <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.</p>
             <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="number" name="text2" id="text2" placeholder="0" class="textnumero" min="1" max="20">
-                <input type="submit" value="Adicionar" class="adicionar">
+                <input type="button" value="+">
+                <input type="button" value="-">
             </div>
         </div>
         <div class="produto1">
-            <div class="produto2"><img src="imagens/coxinhasalsichao.png" alt="Coxinha de salsicha" class="foto"></div>
-            <p class="negrito">Salsichão</p>
-            <p>Salsicha recheada com queijo coalho.</p>
+            <div class="produto2">
+                <img src="imagens/coxinhasalsichao.png" alt="Coxinha de salsicha" class="foto">
+            </div>
+            <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.</p>
             <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="number" name="text3" id="text3" placeholder="0" class="textnumero" min="1" max="20">
-                <input type="submit" value="Adicionar" class="adicionar">
+                <input type="button" value="+">
+                <input type="button" value="-">
             </div>
         </div>
         <div class="produto1">
-            <div class="produto2"><img src="imagens/coxinhapizza.png" alt="Coxinha de pizza" class="foto"></div>
-            <p class="negrito">Coxão de Pizza</p>
-            <p>Queijo musarela, presunto, azeitona orégano e molho.</p>
+            <div class="produto2">
+                <img src="imagens/coxinhapizza.png" alt="Coxinha de pizza" class="foto">
+            </div>
+            <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.</p>
             <p>R$ 9,00.</p>
             <div class="produto3">
-                <input type="number" name="text4" id="text4" placeholder="0" class="textnumero" min="1" max="20">
-                <input type="submit" value="Adicionar" class="adicionar">
+                <input type="button" value="+">
+                <input type="button" value="-">
             </div>
         </div>
         <div class="produto1">
+            <div class="produto2">
+                <img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto">
+            </div>
+            <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.</p>
+            <p>R$ 9,00.</p>
+            <div class="produto3">
+                <input type="button" value="+">
+                <input type="button" value="-">
+            </div>
+        </div>
+        <div class="produto1">
+            <div id="celular"></div>
+        </div>
+        <!--<div class="produto1">
             <div class="produto2"><img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto"></div>
             <p class="negrito">Coxão Rústico</p>
             <p>Frango, queijo coalho, milho, coentro e cebolinha.</p>
@@ -168,13 +190,10 @@
         <div class="produto1">
             <div id="celular"></div>
         </div>
-    </div>
+    </div>-->
     <script>
         let numero1=document.getElementById("text1")
         let celular=document.querySelector('div#celular')
-        /*function prod1(){
-            celular.innerHTML="Coxão de frango "+text1.value;
-        }*/
         function prod1(){
             if (text1.value>0) {
                 celular.innerHTML="Coxão de Frango "+text1.value+(" de R$ 9,00");
@@ -182,7 +201,7 @@
                 alert("Valor em branco!")
             }
         }
-        
+        // dica colocar botao + e botao -. clica adiciona ou aumenta o valor. no menos subtrai. e ja vai escrevendo na tela.
     </script>
 </body>
 </html>
