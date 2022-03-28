@@ -13,10 +13,8 @@
             background-color: black;
             color: white;
             max-width: 1024px;
-            width: 100vw;
-            height: 100vh;
-            padding: 0px;
-            border: 0px;
+            width: 100%;
+            height: 100%;
             margin: auto;
         }
 
@@ -25,7 +23,6 @@
             width: 300px;
             height: auto;
             justify-content: center;
-            margin-top: 3px;
         }
 
         #corpo {
@@ -40,7 +37,7 @@
 
         .produto1 {
             max-width: 300px;
-            width: 45%;
+            width: 46%;
             min-height: 200px;
             max-height: calc(50vw);
             height: auto;
@@ -64,15 +61,15 @@
         }
 
         .foto {
-            width: auto;
-            height: auto;
+            width: 100%;
+            height: 100%;
             display: flex;
             background-color: rgb(255, 215, 0);
         }
 
         .produto3 {
             width: 100%;
-            height: 31%;
+            height: 30%;
             display: flex;
             flex-direction: column;
         }
@@ -116,40 +113,53 @@
 
         .produto4 {
             width: 100%;
-            height: 9%;
+            height: 10%;
             display: flex;
         }
 
         .produto4 input {
-            width: 35%;
+            width: 30%;
             height: auto;
-            background-color: white;
-            color: black;
+            color: gold;
             cursor: pointer;
-            border-radius: 8px;
-        }
-
-        .textnumero {
-            max-width: 25%;
-        }
-
-        .adicionar {
-            min-width: 60%;
-            background-color: white;
-            color: black;
-            border-radius: 8px;
-            font-size: 13px;
         }
 
         #celular {
-            background-image: url(imagens/telacelular.png);
-            background-size: cover;
             width: 100%;
             height: 100%;
             display: flex;
-            font-size: 10px;
         }
         
+        #tabela {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        #tabela input {
+            width: 70%;
+            height: 70%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+        }
+
+        #tabela tr {
+            width: 100%;
+            height: auto;
+        }
+
+        #tabela td {
+            width: 100%;
+            height: auto;
+            border: 1px solid gold;
+            text-align: center;
+            vertical-align: super;
+            
+        }
     </style>
 </head>
 <body>
@@ -160,12 +170,11 @@
                 <img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto">
             </div>
             <div class="produto3">
-                <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.</p>
-                <p>R$ 9,00.</p>
+                <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
-                <input type="button" value="-">
-                <input type="button" value="+">
+                <input type="button" value="-" onclick="diminuir1()">
+                <input type="button" value="+" onclick="adicionar1()">
             </div>
         </div>
         <div class="produto1">
@@ -173,8 +182,7 @@
                 <img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto">
             </div>
             <div class="produto3">
-                <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.</p>
-                <p>R$ 9,00.</p>
+                <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
                 <input type="button" value="-">
@@ -186,8 +194,7 @@
                 <img src="imagens/coxinhasalsichao.png" alt="Coxinha de salsicha" class="foto">
             </div>
             <div class="produto3">
-                <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.</p>
-                <p>R$ 9,00.</p>
+                <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
                 <input type="button" value="-">
@@ -199,8 +206,7 @@
                 <img src="imagens/coxinhapizza.png" alt="Coxinha de pizza" class="foto">
             </div>
             <div class="produto3">
-                <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.</p>
-                <p>R$ 9,00.</p>
+                <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
                 <input type="button" value="-">
@@ -212,8 +218,7 @@
                 <img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto">
             </div>
             <div class="produto3">
-                <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.</p>
-                <p>R$ 9,00.</p>
+                <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
                 <input type="button" value="-">
@@ -221,7 +226,39 @@
             </div>
         </div>
         <div class="produto1">
-            <div id="celular"></div>
+            <div id="celular">
+                <div id="tabela">
+                    <table>
+                        <tr>
+                            <td><p>Coxão de Frango</p></td>
+                            <td id="celula1"><input type="number" name="aaa" id="aaa"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Frango com Requeijão</p></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><p>Salsichão</p></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><p>Coxão de Pizza</p></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><p>Coxão Rústico</p></td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><p>Total</p></td>
+                            <td>00,00</td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><p>Enviar para Whatsapp</p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
         <!--<div class="produto1">
             <div class="produto2"><img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto"></div>
@@ -233,12 +270,35 @@
                 <input type="submit" value="Adicionar" class="adicionar">
             </div>
         </div>
-        <div class="produto1">
-            <div id="celular"></div>
-        </div>
     </div>-->
     <script>
-        let numero1=document.getElementById("text1")
+        function adicionar1() {
+            //prod11=Number("prod1");
+            //prod11+=1;
+            //document.write(prod11.innerText);
+        }
+
+        /*
+        <table id="myTable">
+            <tr>
+                <td>cell 1</td>
+                <td>cell 2</td>
+            </tr>
+            <tr>
+                <td>cell 3</td>
+                <td>cell 4</td>
+            </tr>
+        </table>
+
+        <button onclick="myFunction()">Alterar celula 0,0</button>
+
+        <script>
+        function myFunction() {
+            var x = document.getElementById("myTable").rows[0].cells[0];
+            x.innerHTML = "<input type='text' >";
+        }
+        */
+        /*let numero1=document.getElementById("text1")
         let celular=document.querySelector('div#celular')
         function prod1(){
             if (text1.value>0) {
@@ -246,8 +306,8 @@
             } else {
                 alert("Valor em branco!")
             }
-        }
-        // dica colocar botao + e botao -. clica adiciona ou aumenta o valor. no menos subtrai. e ja vai escrevendo na tela.
+        }*/
+        // dica colocar botao + e botao -. clica adiciona ou aumenta o valor. no menos subtrai. e ja vai escrevendo na tela. colocar botao reset
     </script>
 </body>
 </html>
