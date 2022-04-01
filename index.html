@@ -10,12 +10,18 @@
 
         * {
             font-family: 'Roboto Serif', serif;
-            background-color: black;
+            /*background-color: black;*/
             color: white;
             max-width: 1024px;
             width: 100%;
             height: 100%;
-            margin: auto;
+            margin: auto;            
+        }
+
+        body {
+            background-image: url(imagens/estrelas.jpg);
+            background-size: cover;
+            background-position: center;
         }
 
         h1 {
@@ -43,7 +49,7 @@
             height: auto;
             display: flex;
             flex-direction: column;
-            border: 1px solid white;
+            border: 1px solid black;
             border-radius: 3px;
             margin: 4px;
         }
@@ -72,6 +78,7 @@
             height: 30%;
             display: flex;
             flex-direction: column;
+            background-color: black;
         }
 
         .produto3 p {
@@ -79,6 +86,7 @@
             height: auto;
             display: flex;
             text-align: center;
+            color: gold;
         }
 
         @media(min-width: 320px) {
@@ -120,45 +128,67 @@
         .produto4 input {
             width: 30%;
             height: auto;
-            color: gold;
+            color: black;
             cursor: pointer;
+            background-color: yellow;
         }
 
         #celular {
             width: 100%;
-            height: 100%;
+            height: auto;
             display: flex;
+            flex-direction: column;
+        }
+
+        #celular p{
+            color: gold;
         }
         
-        #tabela {
-            display: table;
+        .vendas {
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
         }
 
-        #tabela input {
-            width: 70%;
-            height: 70%;
+        .vendas1 {
+            width: 75%;
+            height: 4.5vh;
+            max-height: 67px;
+            display: flex;
+            margin: 4px;
+            background-color: black;
         }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            height: 100%;
-        }
-
-        #tabela tr {
+        .vendas1 p {
             width: 100%;
             height: auto;
         }
 
-        #tabela td {
-            width: 100%;
+        .vendas2 {
+            width: 9%;
             height: auto;
-            border: 1px solid gold;
-            text-align: center;
-            vertical-align: super;
-            
+            display: flex;
+            margin: auto;
+        }
+
+        .vendas2 input{
+            width: 100%;
+            height: 100%;
+            color: black;
+        }
+
+        #total {
+            display: flex;
+        }
+
+        #vendasfinal{
+            display: flex;
+            flex-direction: row;
+        }
+
+        #bloco1 {
+            display: none;
         }
     </style>
 </head>
@@ -174,7 +204,7 @@
             </div>
             <div class="produto4">
                 <input type="button" value="-" onclick="diminuir1()">
-                <input type="button" value="+" onclick="adicionar1()">
+                <input type="button" value="+" onclick="mostrar1()">
             </div>
         </div>
         <div class="produto1">
@@ -227,87 +257,36 @@
         </div>
         <div class="produto1">
             <div id="celular">
-                <div id="tabela">
-                    <table>
-                        <tr>
-                            <td><p>Coxão de Frango</p></td>
-                            <td id="celula1"><input type="number" name="aaa" id="aaa"></td>
-                        </tr>
-                        <tr>
-                            <td><p>Frango com Requeijão</p></td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td><p>Salsichão</p></td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td><p>Coxão de Pizza</p></td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td><p>Coxão Rústico</p></td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td><p>Total</p></td>
-                            <td>00,00</td>
-                        </tr>
-                        <tr>
-                            <td colspan=2><p>Enviar para Whatsapp</p></td>
-                        </tr>
-                    </table>
+                <div class="vendas" id="bloco1">
+                    <div class="vendas1"><p>Coxão de Frango</p></div>
+                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="1" max="20" value="1"></p></div>
+                </div>
+                <div class="vendas">
+                    <div class="vendas1"><p>Frango com Requeijão</p></div>
+                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="1" max="20" value="1"></p></div>
+                </div>
+                <div class="vendas">
+                    <div class="vendas1"><p>Salsichão</p></div>
+                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="1" max="20" value="1"></p></div>
+                </div>
+                <div class="vendas">
+                    <div class="vendas1"><p>Coxão de Pizza</p></div>
+                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="1" max="20" value="1"></p></div>
+                </div>
+                <div class="vendas">
+                    <div class="vendas1"><p>Coxão Rústico</p></div>
+                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="1" max="20" value="1"></p></div>
+                </div>
+                <div id="vendasfinal">
+                    <div id="whatsapp"><p>Enviar para<br> o Whatsapp</p></div>
+                    <div id="total"><p>Total</p></div>
                 </div>
             </div>
         </div>
-        <!--<div class="produto1">
-            <div class="produto2"><img src="imagens/coxinharustico.png" alt="Coxinha rústica" class="foto"></div>
-            <p class="negrito">Coxão Rústico</p>
-            <p>Frango, queijo coalho, milho, coentro e cebolinha.</p>
-            <p>R$ 9,00.</p>
-            <div class="produto3">
-                <input type="number" name="text5" id="text5" placeholder="0" class="textnumero" min="1" max="20">
-                <input type="submit" value="Adicionar" class="adicionar">
-            </div>
-        </div>
-    </div>-->
     <script>
-        function adicionar1() {
-            //prod11=Number("prod1");
-            //prod11+=1;
-            //document.write(prod11.innerText);
+        function mostrar1() {
+            let mostrar1=document.getElementById("bloco1").style.display="flex";
         }
-
-        /*
-        <table id="myTable">
-            <tr>
-                <td>cell 1</td>
-                <td>cell 2</td>
-            </tr>
-            <tr>
-                <td>cell 3</td>
-                <td>cell 4</td>
-            </tr>
-        </table>
-
-        <button onclick="myFunction()">Alterar celula 0,0</button>
-
-        <script>
-        function myFunction() {
-            var x = document.getElementById("myTable").rows[0].cells[0];
-            x.innerHTML = "<input type='text' >";
-        }
-        */
-        /*let numero1=document.getElementById("text1")
-        let celular=document.querySelector('div#celular')
-        function prod1(){
-            if (text1.value>0) {
-                celular.innerHTML="Coxão de Frango "+text1.value+(" de R$ 9,00");
-            } else {
-                alert("Valor em branco!")
-            }
-        }*/
-        // dica colocar botao + e botao -. clica adiciona ou aumenta o valor. no menos subtrai. e ja vai escrevendo na tela. colocar botao reset
     </script>
 </body>
 </html>
