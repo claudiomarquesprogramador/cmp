@@ -156,8 +156,6 @@
             height: 4.5vh;
             max-height: 67px;
             display: flex;
-            margin: 4px;
-            background-color: black;
         }
 
         .vendas1 p {
@@ -167,7 +165,7 @@
 
         .vendas2 {
             width: 9%;
-            height: auto;
+            height: 100%;
             display: flex;
             margin: auto;
         }
@@ -176,6 +174,7 @@
             width: 100%;
             height: 100%;
             color: black;
+            margin: auto;
         }
 
         #total {
@@ -189,6 +188,49 @@
 
         #bloco1 {
             display: none;
+            background-color: black;
+        }
+
+        #bloco2 {
+            display: none;
+            background-color: black;
+        }
+
+        #bloco3 {
+            display: none;
+            background-color: black;
+        }
+
+        #bloco4 {
+            display: none;
+            background-color: black;
+        }
+
+        #bloco5 {
+            display: none;
+            background-color: black;
+        }
+
+        #whatsapp {
+            background-color: black;
+            display: flex;
+        }
+
+        #whatsapp p {
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+
+        #total {
+            background-color: black;
+            display: flex;
+        }
+
+        #total p {
+            width: auto;
+            height: auto;
+            margin: auto;
         }
     </style>
 </head>
@@ -203,8 +245,8 @@
                 <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
-                <input type="button" value="-" onclick="diminuir1()">
-                <input type="button" value="+" onclick="mostrar1()">
+                <input type="button" value="-" onclick="desaparecer1()">
+                <input type="button" value="+" onclick="aparecer1()">
             </div>
         </div>
         <div class="produto1">
@@ -215,8 +257,8 @@
                 <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
-                <input type="button" value="-">
-                <input type="button" value="+">
+                <input type="button" value="-" onclick="desaparecer2()">
+                <input type="button" value="+" onclick="aparecer2()">
             </div>
         </div>
         <div class="produto1">
@@ -227,8 +269,8 @@
                 <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
-                <input type="button" value="-">
-                <input type="button" value="+">
+                <input type="button" value="-" onclick="desaparecer3()">
+                <input type="button" value="+" onclick="aparecer3()">
             </div>
         </div>
         <div class="produto1">
@@ -239,8 +281,8 @@
                 <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
-                <input type="button" value="-">
-                <input type="button" value="+">
+                <input type="button" value="-" onclick="desaparecer4()">
+                <input type="button" value="+" onclick="aparecer4()">
             </div>
         </div>
         <div class="produto1">
@@ -251,8 +293,8 @@
                 <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.<br>R$ 9,00.</p>
             </div>
             <div class="produto4">
-                <input type="button" value="-">
-                <input type="button" value="+">
+                <input type="button" value="-" onclick="desaparecer5()">
+                <input type="button" value="+" onclick="aparecer5()">
             </div>
         </div>
         <div class="produto1">
@@ -261,19 +303,19 @@
                     <div class="vendas1"><p>Coxão de Frango</p></div>
                     <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="1" max="20" value="1"></p></div>
                 </div>
-                <div class="vendas">
+                <div class="vendas" id="bloco2">
                     <div class="vendas1"><p>Frango com Requeijão</p></div>
                     <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="1" max="20" value="1"></p></div>
                 </div>
-                <div class="vendas">
+                <div class="vendas" id="bloco3">
                     <div class="vendas1"><p>Salsichão</p></div>
                     <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="1" max="20" value="1"></p></div>
                 </div>
-                <div class="vendas">
+                <div class="vendas" id="bloco4">
                     <div class="vendas1"><p>Coxão de Pizza</p></div>
                     <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="1" max="20" value="1"></p></div>
                 </div>
-                <div class="vendas">
+                <div class="vendas" id="bloco5">
                     <div class="vendas1"><p>Coxão Rústico</p></div>
                     <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="1" max="20" value="1"></p></div>
                 </div>
@@ -284,8 +326,35 @@
             </div>
         </div>
     <script>
-        function mostrar1() {
+        function aparecer1() {
             let mostrar1=document.getElementById("bloco1").style.display="flex";
+        }
+        function desaparecer1() {
+            let mostrar1=document.getElementById("bloco1").style.display="none";
+        }
+        function aparecer2() {
+            let mostrar1=document.getElementById("bloco2").style.display="flex";
+        }
+        function desaparecer2() {
+            let mostrar1=document.getElementById("bloco2").style.display="none";
+        }
+        function aparecer3() {
+            let mostrar1=document.getElementById("bloco3").style.display="flex";
+        }
+        function desaparecer3() {
+            let mostrar1=document.getElementById("bloco3").style.display="none";
+        }
+        function aparecer4() {
+            let mostrar1=document.getElementById("bloco4").style.display="flex";
+        }
+        function desaparecer4() {
+            let mostrar1=document.getElementById("bloco4").style.display="none";
+        }
+        function aparecer5() {
+            let mostrar1=document.getElementById("bloco5").style.display="flex";
+        }
+        function desaparecer5() {
+            let mostrar1=document.getElementById("bloco5").style.display="none";
         }
     </script>
 </body>
