@@ -135,9 +135,11 @@
 
         #celular {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: flex;
             flex-direction: column;
+            background-image: url(imagens/papeldeparede.jpg);
+            background-size: contain;
         }
 
         #celular p{
@@ -146,14 +148,16 @@
         
         .vendas {
             width: 100%;
-            height: auto;
+            height: 8vw;
             display: flex;
             flex-direction: row;
+            align-content: space-around;
+            flex: 1;
         }
 
         .vendas1 {
             width: 75%;
-            height: 5.5vh;
+            height: auto;
             max-height: 67px;
             display: flex;
         }
@@ -184,54 +188,63 @@
         #vendasfinal{
             display: flex;
             flex-direction: row;
-            height: 5.5vh;
+            height: 8vw;
+            max-height: 40%;
+            flex: 1;
         }
 
         #bloco1 {
             display: none;
-            background-color: black;
+            max-height: 40%;
         }
 
         #bloco2 {
             display: none;
-            background-color: black;
+            max-height: 40%;
         }
 
         #bloco3 {
             display: none;
-            background-color: black;
+            max-height: 40%;
         }
 
         #bloco4 {
             display: none;
-            background-color: black;
+            max-height: 40%;
         }
 
         #bloco5 {
             display: none;
-            background-color: black;
+            max-height: 40%;
         }
 
         #whatsapp {
-            background-color: black;
+            background-color: #128C7E;
             display: flex;
+            border-radius: 4px;
         }
 
         #whatsapp p {
             width: auto;
             height: auto;
             margin: auto;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
         }
 
         #total {
-            background-color: black;
             display: flex;
+            border-radius: 4px;
         }
 
         #total p {
             width: auto;
             height: auto;
             margin: auto;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -302,66 +315,61 @@
             <div id="celular">
                 <div class="vendas" id="bloco1">
                     <div class="vendas1"><p>Coxão de Frango</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="0" max="20" value="0"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="0" max="20" value="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco2">
                     <div class="vendas1"><p>Frango com Requeijão</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="0" max="20" value="0"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="0" max="20" value="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco3">
                     <div class="vendas1"><p>Salsichão</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="0" max="20" value="0"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="0" max="20" value="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco4">
                     <div class="vendas1"><p>Coxão de Pizza</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="0" max="20" value="0"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="0" max="20" value="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco5">
                     <div class="vendas1"><p>Coxão Rústico</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="20" value="0"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="20" value="1"></p></div>
                 </div>
                 <div id="vendasfinal">
-                    <div id="whatsapp"><p>Enviar para<br> o Whatsapp</p></div>
+                    <div id="whatsapp"><p>WhatsApp</p></div>
                     <div id="total" onclick="total()"><p>Total</p></div>
                 </div>
             </div>
         </div>
     <script>
+        var adicionar1=document.getElementById("bloco1").style.display
         function aparecer1() {
-            let mostrar1=document.getElementById("bloco1").style.display="flex";
-            var prompt1=prompt("Adicione a quantidade");
-            document.getElementById("venda1").value=prompt1;
+            document.getElementById("bloco1").style.display="flex";
         }
         function desaparecer1() {
-            let mostrar1=document.getElementById("bloco1").style.display="none";
+            document.getElementById("bloco1").style.display="none";
         }
         function aparecer2() {
-            let mostrar1=document.getElementById("bloco2").style.display="flex";
+            document.getElementById("bloco2").style.display="flex";
         }
         function desaparecer2() {
-            let mostrar1=document.getElementById("bloco2").style.display="none";
+            document.getElementById("bloco2").style.display="none";
         }
         function aparecer3() {
-            let mostrar1=document.getElementById("bloco3").style.display="flex";
+            document.getElementById("bloco3").style.display="flex";
         }
         function desaparecer3() {
-            let mostrar1=document.getElementById("bloco3").style.display="none";
+            document.getElementById("bloco3").style.display="none";
         }
         function aparecer4() {
-            let mostrar1=document.getElementById("bloco4").style.display="flex";
+            document.getElementById("bloco4").style.display="flex";
         }
         function desaparecer4() {
-            let mostrar1=document.getElementById("bloco4").style.display="none";
+            document.getElementById("bloco4").style.display="none";
         }
         function aparecer5() {
-            let mostrar1=document.getElementById("bloco5").style.display="flex";
+            document.getElementById("bloco5").style.display="flex";
         }
         function desaparecer5() {
-            let mostrar1=document.getElementById("bloco5").style.display="none";
-        }
-
-        function total(){
-            document.write(document.getElementById("venda1").value);
+            document.getElementById("bloco5").style.display="none";
         }
     </script>
 </body>
