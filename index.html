@@ -130,21 +130,7 @@
                 font-size: 23px;
             }
         }
-
-        .produto4 {
-            width: 100%;
-            height: 10%;
-            display: flex;
-        }
-
-        .produto4 input {
-            width: 30%;
-            height: auto;
-            color: black;
-            cursor: pointer;
-            background-color: yellow;
-        }
-
+        
         #celular {
             width: 100%;
             height: 100%;
@@ -224,11 +210,15 @@
             color: white;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-weight: bold;
+            margin-top: 6px;
+            margin-bottom: 6px;
         }
 
         #total {
             display: flex;
             border-radius: 4px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 11px;
         }
 
         #total p {
@@ -251,21 +241,13 @@
             <div class="produto3">
                 <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.<br>R$ 9,00.</p>
             </div>
-            <!--<div class="produto4">
-                <input type="button" value="-" onclick="desaparecer1()">
-                <input type="button" value="+" onclick="aparecer1()">
-            </div>-->
         </div>
-        <!--<div class="produto1">
+        <div class="produto1">
             <div class="produto2">
                 <img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto">
             </div>
             <div class="produto3">
                 <p>&#10149;Frango com Requeijão.&#11176;<br>Frango desfiado com<br>requeijão cremoso.<br>R$ 9,00.</p>
-            </div>
-            <div class="produto4">
-                <input type="button" value="-" onclick="desaparecer2()">
-                <input type="button" value="+" onclick="aparecer2()">
             </div>
         </div>
         <div class="produto1">
@@ -275,10 +257,6 @@
             <div class="produto3">
                 <p>&#10149;Salsichão.&#11176;<br>Salsicha recheada com<br>queijo coalho.<br>R$ 9,00.</p>
             </div>
-            <div class="produto4">
-                <input type="button" value="-" onclick="desaparecer3()">
-                <input type="button" value="+" onclick="aparecer3()">
-            </div>
         </div>
         <div class="produto1">
             <div class="produto2">
@@ -286,10 +264,6 @@
             </div>
             <div class="produto3">
                 <p>&#10149;Coxão de Pizza.&#11176;<br>Queijo musarela, presunto,<br>azeitona orégano e molho.<br>R$ 9,00.</p>
-            </div>
-            <div class="produto4">
-                <input type="button" value="-" onclick="desaparecer4()">
-                <input type="button" value="+" onclick="aparecer4()">
             </div>
         </div>
         <div class="produto1">
@@ -299,32 +273,28 @@
             <div class="produto3">
                 <p>&#10149;Coxão Rústico.&#11176;<br>Frango, queijo coalho, milho,<br>coentro e cebolinha.<br>R$ 9,00.</p>
             </div>
-            <div class="produto4">
-                <input type="button" value="-" onclick="desaparecer5()">
-                <input type="button" value="+" onclick="aparecer5()">
-            </div>
-        </div>-->
+        </div>
         <div class="produto1">
             <div id="celular">
                 <div class="vendas" id="bloco1">
                     <div class="vendas1"><p>Coxão de Frango</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="0" max="9" value="0" maxlength="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="0" max="9" placeholder="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco2">
                     <div class="vendas1"><p>Frango com Requeijão</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="0" max="9" value="0" maxlength="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="0" max="9" placeholder="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco3">
                     <div class="vendas1"><p>Salsichão</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="0" max="9" value="0" maxlength="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="0" max="9" placeholder="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco4">
                     <div class="vendas1"><p>Coxão de Pizza</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="0" max="9" value="0" maxlength="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="0" max="9" placeholder="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco5">
                     <div class="vendas1"><p>Coxão Rústico</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="9" value="0" maxlength="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="9" placeholder="0" maxlength="1"></p></div>
                 </div>
                 <div id="vendasfinal">
                     <div id="whatsapp"><p>WhatsApp</p></div>
@@ -339,7 +309,7 @@
                 alert("Adicione algum produto!");
             }
             if (valor1>=1) {
-                alert("ok");
+                document.getElementById("total").innerHTML="Total R$ "+valor1*9+",00";
             }
         }
     </script>
