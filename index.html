@@ -139,10 +139,6 @@
             background-image: url(imagens/papeldeparede.jpg);
             background-size: contain;
         }
-
-        #celular p{
-            color: gold;
-        }
         
         .vendas {
             width: 100%;
@@ -297,7 +293,7 @@
                     <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="9" placeholder="0" maxlength="1"></p></div>
                 </div>
                 <div id="vendasfinal">
-                    <div id="whatsapp"><p>WhatsApp</p></div>
+                    <div id="whatsapp" onclick="zap()"><p>WhatsApp</p></div>
                     <div id="total" onclick="total()"><p>Total</p></div>
                 </div>
             </div>
@@ -305,13 +301,33 @@
     <script>
         function total() {
             valor1=document.getElementById("venda1").value;
-            if (valor1==0) {
+            valor2=document.getElementById("venda2").value;
+            valor3=document.getElementById("venda3").value;
+            valor4=document.getElementById("venda4").value;
+            valor5=document.getElementById("venda5").value;
+            if (valor1==0 && valor2==0 && valor3==0 && valor4==0 && valor5==0) {
                 alert("Adicione algum produto!");
-            }
-            if (valor1>=1) {
-                document.getElementById("total").innerHTML="Total R$ "+valor1*9+",00";
+            }else {
+                valortotal=(Number(valor1)+Number(valor2)+Number(valor3)+Number(valor4)+Number(valor5))*9;
+                document.getElementById("total").innerHTML="Total R$ "+valortotal+",00";
             }
         }
+
+        function zap() {
+            total();
+            telefone=prompt("Digite seu DDD + número!","Exemplo: 11233334444")
+            pedido="https://wa.me/55"+telefone+"?text="+"Exemplo";
+            window.open(pedido);
+        }
+        /*
+        if(celular.length < 13){
+    	celular = "55" + celular;
+
+        Sim, você deverá usar \n para quebrar o texto.
+
+        https://velhobit.com.br/desenvolvimento/api-do-whatsapp-como-quebrar-linhas-e-passar-parametros-em-links.html
+        }
+        */
     </script>
 </body>
 </html>
