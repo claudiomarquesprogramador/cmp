@@ -65,16 +65,6 @@
             display: flex;
         }
 
-        .botao {
-            display: flex;
-            position: absolute;
-            width: auto;
-            height: auto;
-            background-color: black;
-            font-size: x-large;
-            border-radius: 10px;
-        }
-
         .produto2 img {
             width: 100%;
             height: 100%;
@@ -170,37 +160,45 @@
         
         .vendas {
             width: 100%;
-            height: 8vw;
+            height: auto;
             display: flex;
             flex-direction: row;
-            align-content: space-around;
-            flex: 1;
+            /*flex: 1;*/
         }
 
         .vendas1 {
-            width: 75%;
+            width: auto;
+            min-width: 80%;
             height: auto;
             max-height: 67px;
             display: flex;
+            margin: 0px;
         }
 
         .vendas1 p {
+            width: auto;
+            height: auto;
+            margin: auto 0 auto 0;
+        }
+
+        .vendas2 {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            margin: 0px;
+        }
+
+        .vendas2 p{
             width: 100%;
             height: auto;
         }
 
-        .vendas2 {
-            width: 9%;
-            height: 100%;
-            display: flex;
-            margin: auto;
-        }
-
         .vendas2 input{
-            width: 100%;
-            height: 80%;
+            width: auto;
+            max-width: 72%;
+            height: 70%;
             color: black;
-            margin: auto;
+            margin: 0px;
         }
 
         #total {
@@ -210,34 +208,7 @@
         #vendasfinal{
             display: flex;
             flex-direction: row;
-            height: 8vw;
-            max-height: 40%;
-            flex: 1;
-        }
-
-        #bloco1 {
-            display: none;
-            max-height: 40%;
-        }
-
-        #bloco2 {
-            display: none;
-            max-height: 40%;
-        }
-
-        #bloco3 {
-            display: none;
-            max-height: 40%;
-        }
-
-        #bloco4 {
-            display: none;
-            max-height: 40%;
-        }
-
-        #bloco5 {
-            display: none;
-            max-height: 40%;
+            height: auto;
         }
 
         #whatsapp {
@@ -275,7 +246,6 @@
     <div id="corpo">
         <div class="produto1">
             <div class="produto2">
-                <input type="button" value=" + " class="botao" onclick="aparecer1()">
                 <img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto">
             </div>
             <div class="produto3">
@@ -338,23 +308,23 @@
             <div id="celular">
                 <div class="vendas" id="bloco1">
                     <div class="vendas1"><p>Coxão de Frango</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="0" max="20" value="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda1" id="venda1" min="0" max="9" value="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco2">
                     <div class="vendas1"><p>Frango com Requeijão</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="0" max="20" value="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda2" id="venda2" min="0" max="9" value="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco3">
                     <div class="vendas1"><p>Salsichão</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="0" max="20" value="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda3" id="venda3" min="0" max="9" value="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco4">
                     <div class="vendas1"><p>Coxão de Pizza</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="0" max="20" value="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda4" id="venda4" min="0" max="9" value="0" maxlength="1"></p></div>
                 </div>
                 <div class="vendas" id="bloco5">
                     <div class="vendas1"><p>Coxão Rústico</p></div>
-                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="20" value="1"></p></div>
+                    <div class="vendas2"><p><input type="number" name="venda5" id="venda5" min="0" max="9" value="0" maxlength="1"></p></div>
                 </div>
                 <div id="vendasfinal">
                     <div id="whatsapp"><p>WhatsApp</p></div>
@@ -363,43 +333,14 @@
             </div>
         </div>
     <script>
-        var adicionar1=document.getElementById("bloco1").style.display
-        function aparecer1() {
-            document.getElementById("bloco1").style.display="flex";
-            var primeiro=prompt("Adicionar quantas?")
-            if (primeiro==null) {
-                alert("Erro, coloque o valor entre 1 e 9")
-            } if (primeiro>0) {
-                document.getElementById("venda1").value=primeiro
+        function total() {
+            valor1=document.getElementById("venda1").value;
+            if (valor1==0) {
+                alert("Adicione algum produto!");
             }
-            
-        }
-        function desaparecer1() {
-            document.getElementById("bloco1").style.display="none";
-        }
-        function aparecer2() {
-            document.getElementById("bloco2").style.display="flex";
-        }
-        function desaparecer2() {
-            document.getElementById("bloco2").style.display="none";
-        }
-        function aparecer3() {
-            document.getElementById("bloco3").style.display="flex";
-        }
-        function desaparecer3() {
-            document.getElementById("bloco3").style.display="none";
-        }
-        function aparecer4() {
-            document.getElementById("bloco4").style.display="flex";
-        }
-        function desaparecer4() {
-            document.getElementById("bloco4").style.display="none";
-        }
-        function aparecer5() {
-            document.getElementById("bloco5").style.display="flex";
-        }
-        function desaparecer5() {
-            document.getElementById("bloco5").style.display="none";
+            if (valor1>=1) {
+                alert("ok");
+            }
         }
     </script>
 </body>
