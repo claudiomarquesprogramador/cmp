@@ -53,12 +53,6 @@
             margin: 4px;
         }
 
-        /*.produto2 {
-            width: auto;
-            height: 60%;
-            display: flex;
-        }*/
-
         .produto2 {
             width: auto;
             height: 72%;
@@ -77,14 +71,6 @@
             display: flex;
             background-color: #ffd700;
         }
-
-        /*.produto3 {
-            width: 100%;
-            height: 30%;
-            display: flex;
-            flex-direction: column;
-            background-color: black;
-        }*/
 
         .produto3 {
             width: 100%;
@@ -145,7 +131,6 @@
             height: auto;
             display: flex;
             flex-direction: row;
-            /*flex: 1;*/
         }
 
         .vendas1 {
@@ -315,18 +300,46 @@
 
         function zap() {
             total();
-            telefone=prompt("Digite seu DDD + número!","Exemplo: 11233334444")
-            pedido="https://wa.me/55"+telefone+"?text="+"Exemplo";
-            window.open(pedido);
+            add6=document.getElementById("total").value;
+            valor1=document.getElementById("venda1").value;
+            valor2=document.getElementById("venda2").value;
+            valor3=document.getElementById("venda3").value;
+            valor4=document.getElementById("venda4").value;
+            valor5=document.getElementById("venda5").value;
+
+            add1="Coxão de Frango "+valor1+". Valor: R$ "+valor1*9+",00.%0A";
+            add2="Frango com Requeijão "+valor2+". Valor: R$ "+valor2*9+",00.%0A";
+            add3="Salsichão "+valor3+". Valor: R$ "+valor3*9+",00.%0A";
+            add4="Coxão de Pizza "+valor4+". Valor: R$ "+valor4*9+",00.%0A";
+            add5="Coxão Rústico "+valor5+". Valor: R$ "+valor5*9+",00.%0A";
+
+            if (valor1==0 && valor2==0 && valor3==0 && valor4==0 && valor5==0) {
+                alert("Adicione algum produto!");
+            }
+            telefone=prompt("Digite seu DDD + número!")
+            if (telefone==null) {
+                alert("Pedido Cancelado - Não foi adicionado o número!");
+            }if (telefone.length<11) {
+                alert("Pedido Cancelado - Número Incorreto!");
+            }if (valor1==0) {
+                add1="";
+            } if (valor2==0) {
+                add2="";
+            } if (valor3==0) {
+                add3="";
+            } if (valor4==0) {
+                add4="";
+            } if (valor5==0) {
+                add5="";
+            }
+            pedido="https://wa.me/55"+telefone+"?text="+"Pedido:%0A"+add1+add2+add3+add4+add5+"Total: R$ "+(Number(valor1)+Number(valor2)+Number(valor3)+Number(valor4)+Number(valor5))*9+",00%0A";
+            final=window.open(pedido,"_self");
         }
         /*
-        if(celular.length < 13){
-    	celular = "55" + celular;
-
-        Sim, você deverá usar \n para quebrar o texto.
-
         https://velhobit.com.br/desenvolvimento/api-do-whatsapp-como-quebrar-linhas-e-passar-parametros-em-links.html
         }
+
+        https://www.urlencoder.org/
         */
     </script>
 </body>
