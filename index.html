@@ -10,7 +10,6 @@
 
         * {
             font-family: 'Roboto Serif', serif;
-            /*background-color: black;*/
             color: white;
             max-width: 1024px;
             width: 100%;
@@ -54,10 +53,26 @@
             margin: 4px;
         }
 
-        .produto2 {
+        /*.produto2 {
             width: auto;
             height: 60%;
             display: flex;
+        }*/
+
+        .produto2 {
+            width: auto;
+            height: 72%;
+            display: flex;
+        }
+
+        .botao {
+            display: flex;
+            position: absolute;
+            width: auto;
+            height: auto;
+            background-color: black;
+            font-size: x-large;
+            border-radius: 10px;
         }
 
         .produto2 img {
@@ -70,15 +85,22 @@
             width: 100%;
             height: 100%;
             display: flex;
-            background-color: rgb(255, 215, 0);
+            background-color: #ffd700;
         }
 
-        .produto3 {
+        /*.produto3 {
             width: 100%;
             height: 30%;
             display: flex;
             flex-direction: column;
             background-color: black;
+        }*/
+
+        .produto3 {
+            width: 100%;
+            height: 28%;
+            display: flex;
+            background-color: #1259B3;
         }
 
         .produto3 p {
@@ -86,7 +108,7 @@
             height: auto;
             display: flex;
             text-align: center;
-            color: gold;
+            color: white;
         }
 
         @media(min-width: 320px) {
@@ -253,17 +275,18 @@
     <div id="corpo">
         <div class="produto1">
             <div class="produto2">
+                <input type="button" value=" + " class="botao" onclick="aparecer1()">
                 <img src="imagens/coxinhafrango.png" alt="Coxinha de frango" class="foto">
             </div>
             <div class="produto3">
                 <p>&#10149;Coxão de Frango.&#11176;<br>Muito Frango<br>desfiado.<br>R$ 9,00.</p>
             </div>
-            <div class="produto4">
+            <!--<div class="produto4">
                 <input type="button" value="-" onclick="desaparecer1()">
                 <input type="button" value="+" onclick="aparecer1()">
-            </div>
+            </div>-->
         </div>
-        <div class="produto1">
+        <!--<div class="produto1">
             <div class="produto2">
                 <img src="imagens/coxinhafrangocomrequeijao.png" alt="Coxinha de frango com requeijão" class="foto">
             </div>
@@ -310,7 +333,7 @@
                 <input type="button" value="-" onclick="desaparecer5()">
                 <input type="button" value="+" onclick="aparecer5()">
             </div>
-        </div>
+        </div>-->
         <div class="produto1">
             <div id="celular">
                 <div class="vendas" id="bloco1">
@@ -343,6 +366,13 @@
         var adicionar1=document.getElementById("bloco1").style.display
         function aparecer1() {
             document.getElementById("bloco1").style.display="flex";
+            var primeiro=prompt("Adicionar quantas?")
+            if (primeiro==null) {
+                alert("Erro, coloque o valor entre 1 e 9")
+            } if (primeiro>0) {
+                document.getElementById("venda1").value=primeiro
+            }
+            
         }
         function desaparecer1() {
             document.getElementById("bloco1").style.display="none";
