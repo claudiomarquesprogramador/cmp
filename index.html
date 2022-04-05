@@ -318,8 +318,10 @@
             telefone=prompt("Digite seu DDD + número!")
             if (telefone==null) {
                 alerta1=alert("Pedido Cancelado - Não foi adicionado o número!");
+                return;
             }else if (telefone.length<11) {
                 alerta2=alert("Pedido Cancelado - Número Incorreto!");
+                return
             }else if (valor1==0) {
                 add1="";
             } if (valor2==0) {
