@@ -299,7 +299,6 @@
         }
 
         function zap() {
-            total();
             add6=document.getElementById("total").value;
             valor1=document.getElementById("venda1").value;
             valor2=document.getElementById("venda2").value;
@@ -315,13 +314,13 @@
 
             if (valor1==0 && valor2==0 && valor3==0 && valor4==0 && valor5==0) {
                 alert("Adicione algum produto!");
-            }
+            }else {
             telefone=prompt("Digite seu DDD + número!")
             if (telefone==null) {
-                alert("Pedido Cancelado - Não foi adicionado o número!");
-            }if (telefone.length<11) {
-                alert("Pedido Cancelado - Número Incorreto!");
-            }if (valor1==0) {
+                alerta1=alert("Pedido Cancelado - Não foi adicionado o número!");
+            }else if (telefone.length<11) {
+                alerta2=alert("Pedido Cancelado - Número Incorreto!");
+            }else if (valor1==0) {
                 add1="";
             } if (valor2==0) {
                 add2="";
@@ -334,6 +333,7 @@
             }
             pedido="https://wa.me/55"+telefone+"?text="+"Pedido:%0A"+add1+add2+add3+add4+add5+"Total: R$ "+(Number(valor1)+Number(valor2)+Number(valor3)+Number(valor4)+Number(valor5))*9+",00%0A";
             final=window.open(pedido,"_self");
+            }
         }
         /*
         https://velhobit.com.br/desenvolvimento/api-do-whatsapp-como-quebrar-linhas-e-passar-parametros-em-links.html
